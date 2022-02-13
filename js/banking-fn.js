@@ -34,7 +34,7 @@ function getInputValue() {
     // imp-step: 3 clear deposit input field /
     /* depositInput.value = ''; */
 })
-// handle withdraw-button by event handler in withdraw section ///
+// handle withdraw-button by event handler in withdraw section ////
 document.getElementById("withdraw-button").addEventListener('click', function(){
     const withdrawInput = document.getElementById('withdraw-input');
     const withdrawAmountText = withdrawInput.value;
