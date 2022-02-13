@@ -7,14 +7,14 @@ const first = doubleIt(5);
 const second = doubleIt(10);
 console.log(first, second); */
 function getInputValue(inputId) {
-    const depositInput = document.getElementById(inputId);
-    const depositAmountText = depositInput.value;
-    const depositAmount = parseFloat(depositAmountText);
+    const inputField = document.getElementById(inputId);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
     // imp-step: 3 clear deposit input field /
-    depositInput.value = '';
+    inputField.value = '';
     //imp-step: 3 clear withdraw input field /
     // withdrawInput.value = ''; 
-    return depositAmount;
+    return amountValue;
 } 
 // handle deposit-button by event handler in deposit section ///
  document.getElementById("deposit-button").addEventListener('click', function(){
