@@ -1,8 +1,26 @@
-// handle deposit-button by event handler in deposit section ///
-document.getElementById("deposit-button").addEventListener('click', function(){
+/* // basic function learning:-
+function doubleIt(num){
+    const result = num*2;
+    return result;
+}
+const first = doubleIt(5);
+const second = doubleIt(10);
+console.log(first, second); */
+function getInputValue() {
     const depositInput = document.getElementById('deposit-input');
     const depositAmountText = depositInput.value;
     const depositAmount = parseFloat(depositAmountText);
+    // imp-step: 3 clear deposit input field /
+    depositInput.value = '';
+    return depositAmount;
+} 
+// handle deposit-button by event handler in deposit section ///
+ document.getElementById("deposit-button").addEventListener('click', function(){
+    /* const depositInput = document.getElementById('deposit-input');
+    const depositAmountText = depositInput.value;
+    const depositAmount = parseFloat(depositAmountText); */
+    const depositAmount = getInputValue();
+
     //imp-step: 1 get current deposit /
     const depositTotal = document.getElementById('deposit-total');
     const depositTotalText = depositTotal.innerText;
@@ -14,7 +32,7 @@ document.getElementById("deposit-button").addEventListener('click', function(){
     const previousBalanceTotal = parseFloat(balanceTotalText);
     balanceTotal.innerText = previousBalanceTotal + depositAmount;
     // imp-step: 3 clear deposit input field /
-    depositInput.value = '';
+    /* depositInput.value = ''; */
 })
 // handle withdraw-button by event handler in withdraw section ///
 document.getElementById("withdraw-button").addEventListener('click', function(){
