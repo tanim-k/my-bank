@@ -6,8 +6,8 @@ function doubleIt(num){
 const first = doubleIt(5);
 const second = doubleIt(10);
 console.log(first, second); */
-function getInputValue() {
-    const depositInput = document.getElementById('deposit-input');
+function getInputValue(inputId) {
+    const depositInput = document.getElementById(inputId);
     const depositAmountText = depositInput.value;
     const depositAmount = parseFloat(depositAmountText);
     // imp-step: 3 clear deposit input field /
@@ -19,7 +19,7 @@ function getInputValue() {
     /* const depositInput = document.getElementById('deposit-input');
     const depositAmountText = depositInput.value;
     const depositAmount = parseFloat(depositAmountText); */
-    const depositAmount = getInputValue();
+    const depositAmount = getInputValue('deposit-input');
 
     //imp-step: 1 get current deposit /
     const depositTotal = document.getElementById('deposit-total');
