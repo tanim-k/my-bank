@@ -27,10 +27,17 @@ function updateTotalField(totalFieldId, amount) {
     totalElement.innerText = previousTotal + amount; 
 }
 // 3::::
-function updateBalance(amount, isADD) {
+function getCurrentBalance() {
     const balanceTotal = document.getElementById('balance-total');
     const balanceTotalText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(balanceTotalText);
+    return previousBalanceTotal;    
+}
+// 4::::
+function updateBalance(amount, isADD) {
+    const balanceTotal = document.getElementById('balance-total');
+    // const balanceTotalText = balanceTotal.innerText;
+    // const previousBalanceTotal = parseFloat(balanceTotalText);
     if(isADD == true){
         balanceTotal.innerText = previousBalanceTotal + amount;
     }
@@ -64,7 +71,7 @@ function updateBalance(amount, isADD) {
     const previousBalanceTotal = parseFloat(balanceTotalText);
     balanceTotal.innerText = previousBalanceTotal + depositAmount; 
     */
-   updateBalance(depositAmount, true);
+    updateBalance(depositAmount, true);
 
     // imp-step: 3 clear deposit input field /
     /* depositInput.value = ''; */
@@ -97,5 +104,5 @@ document.getElementById("withdraw-button").addEventListener('click', function(){
     const previousBalanceTotal = parseFloat(balanceTotalText);
     balanceTotal.innerText = previousBalanceTotal - withdrawAmount; 
     */
-    updateBalance(withdrawAmount, false);       
+    updateBalance(withdrawAmount, false);      
 })
