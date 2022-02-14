@@ -3,15 +3,11 @@ function getInputValue(inputId) {
     const inputField = document.getElementById(inputId);
     const inputAmountText = inputField.value;
     const amountValue = parseFloat(inputAmountText);
-    // imp-step: 3 clear deposit input field /
     inputField.value = '';
-    //imp-step: 3 clear withdraw input field /
-    // withdrawInput.value = ''; 
     return amountValue;
 }
 // 2:::
 function updateTotalField(totalFieldId, amount) {
-    // debugger;
     const totalElement = document.getElementById(totalFieldId);
     const totalText = totalElement.innerText;
     const previousTotal = parseFloat(totalText);
@@ -27,8 +23,6 @@ function getCurrentBalance() {
 // 4:::
 function updateBalance(amount, isADD) {
     const balanceTotal = document.getElementById('balance-total');
-    /* const balanceTotalText = balanceTotal.innerText;
-    const previousBalanceTotal = parseFloat(balanceTotalText); */
     const previousBalanceTotal = getCurrentBalance();
     if(isADD == true){
         balanceTotal.innerText = previousBalanceTotal + amount;
@@ -50,12 +44,11 @@ document.getElementById("deposit-button").addEventListener('click', function(){
 document.getElementById("withdraw-button").addEventListener('click', function(){
     const withdrawAmount = getInputValue('withdraw-input');
     const currnetBalance = getCurrentBalance();
-    if(withdrawAmount > 0 && withdrawAmount < currnetBalance) {
+    if(withdrawAmount > 0 && withdrawAmount <= currnetBalance) {
         updateTotalField('withdraw-total', withdrawAmount);
         updateBalance(withdrawAmount, false);
     }
     if(withdrawAmount > currnetBalance) {
         console.log('withdraw less amount than your current balance')
     }
-
 })
